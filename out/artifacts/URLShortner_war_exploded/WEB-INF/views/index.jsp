@@ -12,7 +12,7 @@
 
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Link Compressor</title>
    <link href="/resources/css/bootstrap.css" rel="stylesheet">
     <link href="/resources/css/custom.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
@@ -20,8 +20,8 @@
   <body>
   <div class="d-flex flex-column h-100">
   <nav class="nav bg-info" style="background: #C8293F!important;">
-      <a class="nav-link active text-white" href="#">Active</a>
-      <a class="nav-link text-white" href="#">Link</a>
+      <a class="nav-link active text-white" href="login">Login</a>
+      <a class="nav-link text-white" href="register">Register</a>
       <a class="nav-link text-white" href="#">Link</a>
       <a class="nav-link  text-white disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </nav>
@@ -39,7 +39,7 @@
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary btn-lg convert-button">Me Encurte!</button>
+                    <button type="button" class="btn btn-primary btn-lg convert-button" >Me Encurte!</button>
                 </div>
             </form>
         </div>

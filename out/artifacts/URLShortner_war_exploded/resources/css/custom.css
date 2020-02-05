@@ -14,7 +14,11 @@ html,body{
     grid-column: 2;
     z-index: 9999;
 }
-.form-control {
+.registration-input{
+    grid-column: 2;
+    z-index: 9999;
+}
+.url-input .form-control {
     height: 6em!important;
 }
 .url-input input{
@@ -24,16 +28,26 @@ html,body{
 }
 .convert-button{
     font-size: 2.5em;
+    background: #FF5E53!important;
+    border-color: #FFf;
 }
 .form-padding{
     margin: 1em;
+}
+.registration-input input{
+    height: 2.5em;
 }
 .link-tip{
     margin: 1em 0 0 0;
     font-size: 3em;
     color: #C8293F;
     font-weight: 400;
-
+}
+.registration-form{
+    background: rgba(255,255,255,0.5);
+    padding: 1em;
+    margin: 1em 0 1em 0;
+    border-radius: 10px;
 }
 .footer{
     background: #039BA7;

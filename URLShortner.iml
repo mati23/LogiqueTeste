@@ -26,5 +26,8 @@
     <orderEntry type="library" name="Spring Data JPA-2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Spring MVC-5.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="org.apache.commons:commons-dbcp2:2.7.0" level="project" />
+    <orderEntry type="library" name="mysql:mysql-connector-java:8.0.19" level="project" />
+    <orderEntry type="library" name="org.hibernate:hibernate-annotations:3.5.6-Final" level="project" />
   </component>
 </module>
