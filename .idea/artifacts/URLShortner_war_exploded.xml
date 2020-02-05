@@ -11,6 +11,7 @@
           <element id="library" level="project" name="Spring MVC-5.2.3.RELEASE" />
           <element id="library" level="project" name="Spring Data JPA-2.2.4.RELEASE" />
           <element id="library" level="project" name="Spring-5.2.3.RELEASE" />
+          <element id="library" level="project" name="jstl:jstl:1.2" />
         </element>
       </element>
     </root>
