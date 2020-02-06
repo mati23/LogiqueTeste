@@ -7,12 +7,15 @@
     <persistence-unit name="tarefas">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
         <class>com.logique.model.User</class>
 
         <properties>
-
-            <!-- SEM as propriedades URL, login, senha e driver -->
+            <property name="javax.persistence.jdbc.driver"
+                      value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost/logique" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="reverse" />
 
             <property name="hibernate.dialect"
                       value="org.hibernate.dialect.MySQL5InnoDBDialect" />
