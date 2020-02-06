@@ -2,5 +2,7 @@ package com.logique.dao;
 
 import com.logique.model.User;
 public interface UserDAO {
-    public void insert(User user);
+    void insert(User user);
+    User getUserByEmail(String email);
+    boolean validateUser(String email, String password);
 }

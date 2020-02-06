@@ -20,10 +20,10 @@
 <body>
 <div class="d-flex flex-column h-100">
     <nav class="nav bg-info" style="background: #C8293F!important;">
-        <a class="nav-link active text-white" href="login">Login</a>
-        <a class="nav-link text-white" href="register">Register</a>
-        <a class="nav-link text-white" href="#">Link</a>
-        <a class="nav-link  text-white disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link active text-white" href="/index/">Home</a>
+        <a class="nav-link active text-white" href="/login/">Login</a>
+        <a class="nav-link text-white" href="/register/">Register</a>
+
     </nav>
     <div class="main-container">
         <img src="/resources/images/wallpaper.jpg" class="background-image"/>

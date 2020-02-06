@@ -20,19 +20,32 @@
   <body>
   <div class="d-flex flex-column h-100">
   <nav class="nav bg-info" style="background: #C8293F!important;">
-      <a class="nav-link active text-white" href="login">Login</a>
-      <a class="nav-link text-white" href="register">Register</a>
-      <a class="nav-link text-white" href="#">Link</a>
-      <a class="nav-link  text-white disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <a class="nav-link active text-white" href="/index/">Home</a>
+      <c:choose>
+          <c:when test="${login==null}">
+              <a class="nav-link active text-white" href="/login/">Login</a>
+              <a class="nav-link text-white" href="/register/">Register</a>
+          </c:when>
+          <c:when test="${login!=null}">
+              <a class="nav-link active text-white" href="/login/">Logout</a>
+          </c:when>
+      </c:choose>
+
+
   </nav>
       <div class="main-container">
           <img src="/resources/images/wallpaper.jpg" class="background-image"/>
           <c:choose>
-              <c:when test="${false}">
-                  <div>lala</div>
+              <c:when test="${login == null}">
+                  <div class="login-message">
+                        <div class="text-message">Para acessar a página precisamos de sua contribuição.</div> <br>
+                        <div>Por favor, registre-se na nossa plataforma!</div>
+                  </div>
+
               </c:when>
-        <c:when test="${true}">
+        <c:when test="${login!=null}">
         <div class="url-input">
+                ${login}
             <form>
                 <div class="link-tip text-center">Insira seu link abaixo</div>
                 <div class="form-padding">

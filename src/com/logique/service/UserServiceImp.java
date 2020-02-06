@@ -20,4 +20,16 @@ public class UserServiceImp implements UserService {
         this.userDAO.insert(user);
     }
 
+    @Override
+    @Transactional
+    public  User getUserByEmail(String email){
+        return this.userDAO.getUserByEmail(email);
+    }
+
+    @Override
+    @Transactional
+    public  boolean validateUser(String email, String password){
+        return this.userDAO.validateUser(email,password);
+    }
+
 }
