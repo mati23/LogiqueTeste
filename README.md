@@ -1,3 +1,3 @@
 # LogiqueTeste
 
-![image](Screenshots/1.jpg)
+![image](./Screenshots/1.jpg)
