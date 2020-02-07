@@ -29,9 +29,17 @@ public class HomeController {
 
     @PostMapping("/compress")
     public String compress(@ModelAttribute("url")  String url, HttpServletRequest request, RedirectAttributes redirectAttributes){
-        String newUrl = this.urlService.insert(url, request.getSession().getAttribute("login").toString());
-        redirectAttributes.addFlashAttribute("newlink",newUrl);
-        return "redirect:/index/";
+        if(url.substring(0,4).contains("http") == true ||
+           url.substring(0,4).contains("www") == true){
+            String newUrl = this.urlService.insert(url, request.getSession().getAttribute("login").toString());
+            redirectAttributes.addFlashAttribute("newlink",newUrl);
+            return "redirect:/index/";
+        }else{
+            redirectAttributes.addFlashAttribute("newlink","url invalida");
+            return "redirect:/index/";
+        }
+
+
     }
     @GetMapping("/logout")
     public String logout(HttpServletRequest request){
