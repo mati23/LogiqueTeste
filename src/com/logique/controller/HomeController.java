@@ -19,7 +19,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/index")
-public class UserController {
+public class HomeController {
     @Autowired
     private UrlService urlService;
     @GetMapping("/")

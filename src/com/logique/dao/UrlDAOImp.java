@@ -32,8 +32,8 @@ public class UrlDAOImp implements UrlDAO {
         {
             // use above map to store actual character
             // in short url
-            shorturl.append(map[n%31]);
-            n = n/31;
+            shorturl.append(map[n%62]);
+            n = n/62;
         }
 
         // Reverse shortURL to complete base conversion
@@ -42,20 +42,26 @@ public class UrlDAOImp implements UrlDAO {
         return shorturl.reverse().toString();
     }
 
-    @Override
-    public String insert(String url, String email){
-        Session session = null;
-        UserDAOImp userDAOImp = new UserDAOImp();
-        User user = userDAOImp.getUserByEmail(email,sessionFactory);
-        String shortUrl = "";
+    public int convertUrlToInt(String url){
         int aux = 0;
         for(int i=0; i<url.length();i++){
             char ch = url.charAt(i);
             int intChar = ch;
             aux = aux + intChar;
         }
-        int timeStamp = (int) (new Date().getTime()/1000);
-        shortUrl = this.idToShortURL(aux + timeStamp);
+        int timeStamp = (int) (new Date().getTime()/10000);
+        return aux + timeStamp;
+    }
+
+    @Override
+    public String insert(String url, String email){
+        Session session = null;
+        UserDAOImp userDAOImp = new UserDAOImp();
+        User user = userDAOImp.getUserByEmail(email,sessionFactory);
+        String shortUrl = "";
+
+        int urlInt = convertUrlToInt(url);
+        shortUrl = this.idToShortURL(urlInt);
 
         try {
             session = sessionFactory.getCurrentSession();
