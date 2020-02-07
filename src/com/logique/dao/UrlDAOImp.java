@@ -43,10 +43,11 @@ public class UrlDAOImp implements UrlDAO {
     }
 
     @Override
-    public void insert(String url, String email){
+    public String insert(String url, String email){
         Session session = null;
         UserDAOImp userDAOImp = new UserDAOImp();
         User user = userDAOImp.getUserByEmail(email,sessionFactory);
+        String shortUrl = "";
         int aux = 0;
         for(int i=0; i<url.length();i++){
             char ch = url.charAt(i);
@@ -54,19 +55,33 @@ public class UrlDAOImp implements UrlDAO {
             aux = aux + intChar;
         }
         int timeStamp = (int) (new Date().getTime()/1000);
-        String shortUrl = this.idToShortURL(aux + timeStamp);
+        shortUrl = this.idToShortURL(aux + timeStamp);
 
         try {
             session = sessionFactory.getCurrentSession();
             Url newUrl = new Url();
             newUrl.setOriginUrl(url);
-            newUrl.setShortUrl(shortUrl);
+            newUrl.setShortUrl("lgq.br/"+shortUrl);
             newUrl.setUserId(user);
             session.persist(newUrl);
         }catch (Exception ex){
             ex.printStackTrace();
         }
+        return "lgq.br/"+shortUrl;
     }
 
+    @Override
+    public List<Url> findAll(){
+        Session session = null;
+        List<Url> urls = null;
+        try{
+            session = sessionFactory.getCurrentSession();
+            Query query = session.createQuery("from Url");
+            urls = query.list();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return urls;
+    }
 
 }

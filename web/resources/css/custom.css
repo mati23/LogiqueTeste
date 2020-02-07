@@ -9,6 +9,16 @@
 html,body{
     height: 100%;
     font-family: Caviar;
+    overflow: hidden;
+}
+::-webkit-scrollbar
+{
+    width: 0px;
+}
+::-webkit-scrollbar-track-piece
+{
+    background-color: transparent;
+    -webkit-border-radius: 6px;
 }
 .main-container{
     display: grid;
@@ -18,6 +28,7 @@ html,body{
 .url-input{
     grid-column: 2;
     z-index: 9999;
+    overflow: scroll;
 }
 .registration-input{
     grid-column: 2;
@@ -50,6 +61,10 @@ html,body{
 }
 .registration-form{
     background: rgba(200, 41, 63,0.8); padding: 1em; margin: 1em 0 0 0; border-radius: 10px;
+    color: white;
+}
+.list-container{
+    background: rgba(188, 38, 63,0.8); padding: 1em; margin: 1em 0 0 0; border-radius: 10px;
     color: white;
 }
 .footer{
@@ -102,4 +117,39 @@ html,body{
     color: #FFDCC5;
     font-family: Caviar;
     margin: 0 1em 0 1em;
+    font-weight: 900;
 }
+.generated-link-container{
+    color: white;
+    background: #56AB7F;
+    height: 100px;
+    margin: 1em 0;
+    border-radius: 4em;
+    text-align: center;
+}
+.generated-link-title{
+    font-size: 1em;
+    text-align: center;
+}
+.generated-link{
+    font-size: 3em;
+    text-align: center;
+}
+.original-link{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+table{
+    background: #661923!important;
+    font-weight: 900;
+}
+.table > tbody > tr:nth-child(2n+1) > td, .table > tbody > tr:nth-child(2n+1) > th {
+    background-color: #66101b;
+    font-weight: 900;
+}
+.table-dark th, .table-dark td, .table-dark thead th {
+    border-color: #66101b!important;
+}
+

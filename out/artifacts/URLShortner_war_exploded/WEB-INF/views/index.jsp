@@ -28,7 +28,8 @@
           </c:when>
           <c:when test="${login!=null}">
               <div class="nav-link active text-white">Olá, ${login}!</div>
-              <a class="nav-link active text-white" href="/login/">Sair</a>
+              <a class="nav-link active text-white" href="/index/list/">Listar Links</a>
+              <a class="nav-link active text-white" href="/index/logout/">Sair</a>
           </c:when>
       </c:choose>
 
@@ -57,7 +58,7 @@
         <div class="url-input">
 
             <form action="/index/compress" method="post" class="registration-form">
-                <div class="link-tip text-center">Insira seu link abaixo</div>
+                <div class="link-tip text-center text-white">Insira seu link abaixo</div>
                 <div class="form-padding">
                     <input type="text" class="form-control"  id="url"  name="url"  placeholder="Cole sua URL aqui">
                 </div>
@@ -65,6 +66,12 @@
                     <button type="submit" class="btn btn-primary btn-lg convert-button" >Me Encurte!</button>
                 </div>
             </form>
+            <c:if test="${newlink!=null}">
+                <div class="generated-link-container">
+                    <div class="generated-link-title">O seu novo link é:</div>
+                        <div class="generated-link">${newlink}</div>
+                </div>
+            </c:if>
         </div>
         </c:when>
           </c:choose>
