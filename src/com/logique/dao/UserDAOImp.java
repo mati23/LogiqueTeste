@@ -46,6 +46,22 @@ public class UserDAOImp implements UserDAO {
     }
 
     @Override
+    public User getUserByEmail(String email, SessionFactory sf){
+        Session session = null;
+        User user = null;
+        try {
+            session = sf.getCurrentSession();
+            Query query = session.createQuery("from User where email=:email");
+            query.setParameter("email",email);
+            List<User> users = query.list();
+            user = users.get(0);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return user;
+    }
+
+    @Override
     public boolean validateUser(String email, String password){
         User validationUser = getUserByEmail(email);
         String hashedPassword = validationUser.getPasswordHash();

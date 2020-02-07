@@ -28,7 +28,7 @@
     <div class="main-container">
         <img src="/resources/images/wallpaper.jpg" class="background-image"/>
                 <div class="registration-input">
-                    <form action="/register/register" method="post" style="background: rgba(255,255,255,0.5); padding: 1em; margin: 1em 0 0 0; border-radius: 10px;">
+                    <form action="/register/register" method="post" class="registration-form">
                         <h1 style="margin: 1em 0 0 0;">Insira seus dados</h1>
                         <div class="form-group">
                             <label for="name">Nome</label>

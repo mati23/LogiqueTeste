@@ -3,6 +3,9 @@ package com.logique.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="User")
@@ -20,6 +23,16 @@ public class User {
 
     @Column(name="password_hash")
     private String passwordHash;
+
+    @OneToMany
+    private List<Url> urls = new ArrayList<Url>();
+
+    public List<Url> getUrls(){
+        return this.urls;
+    }
+    public void setUrls(List<Url> url){
+        this.urls = url;
+    }
 
     public int getId() {
         return id;

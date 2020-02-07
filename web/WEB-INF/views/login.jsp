@@ -27,7 +27,7 @@
     <div class="main-container">
         <img src="/resources/images/wallpaper.jpg" class="background-image"/>
         <div class="registration-input">
-            <form action="/login/login" method="post" style="background: rgba(255,255,255,0.5); padding: 1em; margin: 1em 0 0 0; border-radius: 10px;">
+            <form action="/login/login" method="post" class="registration-form">
                 <h1 style="margin: 1em 0 0 0;">Login</h1>
                 <div class="form-group">
                     <label for="email">Email</label>

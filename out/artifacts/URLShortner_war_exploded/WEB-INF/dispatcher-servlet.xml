@@ -29,6 +29,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.logique.model.User</value>
+                <value>com.logique.model.Url</value>
             </list>
         </property>
         <property name="packagesToScan">
@@ -47,12 +48,22 @@
             </props>
         </property>
     </bean>
+
+
     <bean id="userDAO" class="com.logique.dao.UserDAOImp">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     <bean id="userService" class="com.logique.service.UserServiceImp">
         <property name="userDAO" ref="userDAO"></property>
     </bean>
+
+    <bean id="urlDAO" class="com.logique.dao.UrlDAOImp">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="urlService" class="com.logique.service.UrlServiceImp">
+        <property name="urlDAO" ref="urlDAO"></property>
+    </bean>
+
     <context:component-scan base-package="com.logique"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
