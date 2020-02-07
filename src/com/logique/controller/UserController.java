@@ -40,7 +40,7 @@ public class UserController {
     }
     @GetMapping("/list")
     public String list(HttpServletRequest request, Map<String, Object> model){
-        List<Url> listUrl = urlService.findAll();
+        List<Url> listUrl = urlService.findAll(request.getSession().getAttribute("login").toString());
         model.put("urls", listUrl);
         return "list";
     }

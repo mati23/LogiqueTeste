@@ -23,8 +23,8 @@ public class UrlServiceImp implements UrlService {
     }
     @Override
     @Transactional
-    public List<Url> findAll(){
-        return this.urlDAO.findAll();
+    public List<Url> findAll(String email){
+        return this.urlDAO.findAll(email);
     }
 
 

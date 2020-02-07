@@ -71,12 +71,15 @@ public class UrlDAOImp implements UrlDAO {
     }
 
     @Override
-    public List<Url> findAll(){
+    public List<Url> findAll(String email){
         Session session = null;
         List<Url> urls = null;
+        UserDAOImp userDAOImp = new UserDAOImp();
+        User user = userDAOImp.getUserByEmail(email,sessionFactory);
         try{
             session = sessionFactory.getCurrentSession();
-            Query query = session.createQuery("from Url");
+            Query query = session.createQuery("from Url where userId.id=:userId");
+            query.setParameter("userId",user.getId());
             urls = query.list();
         }catch (Exception ex){
             ex.printStackTrace();

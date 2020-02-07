@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface UrlDAO {
     String insert(String url, String email);
-    List<Url> findAll();
+    List<Url> findAll(String email);
 }

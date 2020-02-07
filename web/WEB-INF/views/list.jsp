@@ -28,8 +28,9 @@
             </c:when>
             <c:when test="${login!=null}">
                 <div class="nav-link active text-white">Olá, ${login}!</div>
-                <a class="nav-link active text-white" href="/index/logout/">Sair</a>
                 <a class="nav-link active text-white" href="/index/list/">Listar Links</a>
+                <a class="nav-link active text-white" href="/index/logout/">Sair</a>
+
 
             </c:when>
         </c:choose>

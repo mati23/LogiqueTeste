@@ -24,7 +24,7 @@ public class User {
     @Column(name="password_hash")
     private String passwordHash;
 
-    @OneToMany
+    @OneToMany(mappedBy = "userId")
     private List<Url> urls = new ArrayList<Url>();
 
     public List<Url> getUrls(){
